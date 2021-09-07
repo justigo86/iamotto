@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { Link } from 'react-scroll';
+import Projects from './Projects';
 
 const NavbarContainer = styled.nav `
     position: sticky;
@@ -23,7 +24,6 @@ const menuLoad = keyframes `
 `
 
 const Menu = styled.div `
-    /* border: 2px solid white; */
     height: 3rem;
     width: 3rem;
     cursor: pointer;
@@ -46,8 +46,9 @@ const Burger = styled.div `
     width: 1.9rem;
     height: .3rem;
     border-radius: 8px;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     background: ${(props) => (props.clicked ? 'white' : 'transparent')};
+    visibility: ${(props) => (props.showNav ? 'visible' : 'hidden')};
     &::before,
     &::after {
         content: '';
@@ -56,10 +57,9 @@ const Burger = styled.div `
         width: 2.5rem;
         height: .3rem;
         border-radius: 8px;
-        transition: all 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
     }
     &::before {
-        /* transform: translateY(-.8rem); */
         transform: ${(props) => (props.clicked ? 'rotate(0deg)' : 'rotate(45deg) translateY(13px)')} translateY(-.8rem);
     }
     &::after {
@@ -68,18 +68,19 @@ const Burger = styled.div `
 `
 
 const Navbar = styled.div `
+    /* border: 2px solid white; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    transform: ${(props) => (props.clicked ? 'translateX(-200vw)' : 'none')};
-    transition: all 0.5s ease-in-out;
+    transform: ${(props) => (props.clicked && props.showNav ? 'translateY(-50vw)' : 'none')};
+    transition: all 0.3s ease-in-out;
 `
 
 const Atags = styled.a `
     color: inherit;
-    font-size: clamp(0.25rem, 3vw, 1.5rem);
+    font-size: clamp(0.25rem, 4vw, 2rem);
     font-weight: bold;
     /* color: ; */
     transition: 0.3s ease-in-out all;
@@ -114,17 +115,28 @@ const links = [
 
 const Nav = () => {
     const [expand, setExpand] = useState(true);
+    const [showNav, setShowNav] = useState(false);
+
     const handleClick = () => setExpand(!expand);
+
+    const adjustNavOnScroll = () => {
+        if(window.scrollY > 500) {
+            setShowNav(false);
+        } else {
+            setShowNav(true);
+        }
+    }
+    window.addEventListener('scroll', adjustNavOnScroll);
 
     return (
         <NavbarContainer>
-            <Menu onClick={() => handleClick()}>
-                <Burger clicked={expand} ></Burger>
+            <Menu onClick={() => handleClick()} >
+                <Burger clicked={expand} showNav={showNav}></Burger>
             </Menu>
-            <Navbar clicked={expand}>
+            <Navbar clicked={expand} showNav={showNav}>
                 {links.map((link) => {
                     return (
-                        <Link to={link.text} smooth={true} duration={1000}>
+                        <Link to={link.text} smooth={true} duration={1000} offset={-50}>
                             <Atags key={link.id}>
                                 {link.text}
                             </Atags>

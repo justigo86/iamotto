@@ -22,9 +22,8 @@ const HeroContainer = styled.div `
     height: 100vh;
     text-align: start;
     color: white;
-    font-size: calc(14px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(16px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
     overflow: hidden;
-    padding: 0 2vw 0 0;
     position: relative;
     top: -4rem;
 `
@@ -37,7 +36,7 @@ const heroLoad = keyframes `
 
 const IntroContainer = styled.div `
     position: relative;
-    top: 8vh;
+    top: 18vh;
     left: 8vw;
     transform: rotate(-25deg);
 
@@ -56,6 +55,7 @@ const IntroContainer = styled.div `
 `
 
 const Descriptions = styled.p `
+    margin: 0 10vw 0 0;
     & > .typed {
         font-weight: bolder;
         /* font-size: 20px; */
@@ -76,7 +76,6 @@ const HeroLinks = styled.div `
 const Atags = styled.a `
         text-decoration: none;
         color: inherit;
-        font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
         /* border: 2px solid white; */
     &:hover {
         background-image: linear-gradient(45deg, #6303B1, #ff0099);

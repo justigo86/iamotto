@@ -4,11 +4,20 @@ import image1 from '../photos/DSC4721v2.jpg';
 import AOS from 'aos';
 import "aos/dist/aos.css"
 
+const media = {
+    mobile: '@media(max-width: 600px)',
+    medium: '@media(max-width: 1000px)'
+}
+
 const AboutContainer = styled.div `
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    ${media.mobile} {
+        flex-direction: column;
+    }
+    /* border: 2px solid white; */
 `
 
 const AboutInfoContainer = styled.div`
@@ -18,40 +27,59 @@ const AboutInfoContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     margin: 3vw;
+    & > * {
+        margin: 0 0 5vh;
+    }
+    ${media.mobile} {
+        width: 70vw;
+    }
 `
 
 const AboutTitle = styled.h1`
-    margin: 5vh;
-    background-image: linear-gradient(45deg, #6303B1, #ff0099);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-`
-
-const AboutParagraph = styled.p`
-
-`
-
-const AboutImageContainer = styled.div`
-    width: 35vw;
-    margin: 5vw;
-`
-
-const AboutImage1 = styled.img`
-    width: 30vw;
-`
-
-const PupTitles = styled.p`
+    font-size: calc(24px + (28 - 14) * ((100vw - 300px) / (1600 - 300)));
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `
 
-const PennyTitle = styled(PupTitles)`
+// const AboutParagraph = styled.p`
+// `
+
+const AboutImageContainer = styled.div`
     position: relative;
-    right: 0;
-    text-decoration: underline;
-    color: blue;
+    display: inline-block;  //border hugs included elements
 `
+
+const AboutImage1 = styled.img`
+    width: 35vw;
+    ${media.mobile} {
+        width: 70vw;
+    }
+`
+
+const PupTitles = styled.p`
+    background-image: linear-gradient(45deg, #6303B1, #ff0099);
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    padding: 0 6%;
+    position: absolute;
+    font-weight: bolder;
+    font-size: calc(16px + (26 - 18) * ((100vw - 300px) / (1600 - 300)));
+`;
+
+const BanzaiTitle = styled(PupTitles)`
+    text-align: right;
+    left: -2%;
+    top: 13%;
+`;
+const PennyTitle = styled(PupTitles)`
+    right: -2%;
+    bottom: 25%;
+    & > p {
+        text-align: left;
+        font-size: calc(10px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
+    }
+`;
 
 const About = () => {
     AOS.init()
@@ -65,9 +93,9 @@ const About = () => {
                     and something I'm committed to pursuing professionally.</p>
             </AboutInfoContainer>
             <AboutImageContainer data-aos='fade-left'>
-                <PupTitles>BANZAI</PupTitles>
+                <BanzaiTitle>BANZAI</BanzaiTitle>
                 <AboutImage1 src={image1} alt=''/>
-                <PennyTitle>PENNY</PennyTitle>
+                <PennyTitle>PENNY <p>(sans snot)</p></PennyTitle>
             </AboutImageContainer>
         </AboutContainer>
     )
