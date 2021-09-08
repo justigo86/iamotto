@@ -2,6 +2,7 @@
   font-family: "Raleway";
   src: url('./fonts/Raleway-VariableFont_wght.ttf');
 }
+/* @import './photos/circuit-board.svg'; */
 
 :root {
   /* Main Primary color */
@@ -54,6 +55,7 @@
 }
 
 body {
-  background-color: #1c1c1c;
+  background-image: url('./photos/circuit-board.svg');
+  background-color: #1f1f1f;
   color: hsl(0, 0%, 100%);
 }

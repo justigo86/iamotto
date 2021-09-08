@@ -10,7 +10,7 @@ const media = {
 }
 
 const AboutContainer = styled.div `
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,9 +27,6 @@ const AboutInfoContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     margin: 3vw;
-    & > * {
-        margin: 0 0 5vh;
-    }
     ${media.mobile} {
         width: 70vw;
     }
@@ -40,10 +37,19 @@ const AboutTitle = styled.h1`
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    margin: 0 0 1.5vh;
 `
 
-// const AboutParagraph = styled.p`
-// `
+const AboutSubHeadings = styled(AboutTitle)`
+    font-size: calc(18px + (24 - 14) * ((100vw - 300px) / (1600 - 300)));
+`
+
+const AboutParagraph = styled.p`
+    font-size: calc(12px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-weight: 600;
+    margin: 0 0 4vh;
+`
 
 const AboutImageContainer = styled.div`
     position: relative;
@@ -87,10 +93,14 @@ const About = () => {
         <AboutContainer id='about'>
             <AboutInfoContainer data-aos='fade-right'>
                 <AboutTitle>About</AboutTitle>
-                <p>After years of time spent in post-secondary administration,
+                <AboutParagraph>After years of time spent in post-secondary administration,
                     I've decided to take a leap into web development. 
                     What started as a hobby in my evenings has become a passion 
-                    and something I'm committed to pursuing professionally.</p>
+                    and something I'm committed to pursuing professionally.</AboutParagraph>
+                <AboutSubHeadings>Competencies</AboutSubHeadings>
+                <AboutParagraph>HTML5 / CSS3 / JavaScript / React / JSON / Git / Bash</AboutParagraph>
+                <AboutSubHeadings>Used in the Past</AboutSubHeadings>
+                <AboutParagraph>SQL / Java / PHP</AboutParagraph>
             </AboutInfoContainer>
             <AboutImageContainer data-aos='fade-left'>
                 <BanzaiTitle>BANZAI</BanzaiTitle>

@@ -39,7 +39,7 @@ const IntroContainer = styled.div `
     top: 18vh;
     left: 8vw;
     transform: rotate(-25deg);
-
+    font-weight: 900;
     animation: ${heroLoad} .7s;
 
     & > * {
@@ -69,7 +69,6 @@ const HeroLinks = styled.div `
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: bolder;
     }
 `
 
@@ -95,7 +94,7 @@ const imageLoad = keyframes `
 `
 
 const Image = styled.img `
-    filter: grayscale(100%) opacity(40%);
+    filter: grayscale(100%) brightness(60%);
     position: absolute;
     max-height: 60vh;
     max-width: 60vw;

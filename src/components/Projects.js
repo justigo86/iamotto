@@ -11,7 +11,7 @@ const media = {
 }
 
 const ProjectContainer = styled.div `
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,8 +22,9 @@ const ProjectTitle = styled.h1`
     margin: 5vh;
     font-size: calc(24px + (28 - 14) * ((100vw - 300px) / (1600 - 300)));
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
 `
 
  const ProjectOneCardHeader = styled.div`
