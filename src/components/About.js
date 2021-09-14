@@ -49,6 +49,7 @@ const AboutParagraph = styled.p`
     font-size: calc(12px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
     font-weight: 600;
     margin: 0 0 4vh;
+    text-align: center;
 `
 
 const AboutImageContainer = styled.div`

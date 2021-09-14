@@ -2,8 +2,9 @@ import React from 'react';
 import Typed from 'react-typed';
 import styled, {keyframes} from 'styled-components';
 import { Link } from 'react-scroll';
-import image from '../photos/coffee1.jpg';
 //use Link for smooth react-scroll
+import image from '../photos/coffee1.jpg';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const intros = [
     'am committed to learn every day',
@@ -106,6 +107,30 @@ const Image = styled.img `
     animation: ${imageLoad} ease 2s;
 `
 
+const HeroIconsContainer = styled.ul`
+    /* display: flex; */
+    align-items: right;
+    position: fixed;
+    right: 5px;
+    bottom: 10px;
+    list-style-type: none;
+`
+
+const HeroIcons = styled.li`
+    margin: 5px 10px;
+    & > a {
+        color: white
+    }
+    & > #git:hover {
+        color: #6303B1;
+    }
+    & > #mail:hover {
+        color: #AC00AC;
+    }
+    & > #linked:hover {
+        color: #ff0099;
+    }
+`
 
 // const cycleIntros = () => {
 //     let key = Object.keys(intros);
@@ -116,6 +141,30 @@ const Image = styled.img `
 const Hero = () => {
     return (
         <HeroContainer id='home'>
+            <div>
+                <p>Development Details</p>
+                <ul>
+                    <li>Portfolio Created from Scratch</li>
+                    <li>Languages Used
+                        <ul>
+                            <li>React</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JSX</li>
+                        </ul>
+                    </li>
+                    <li>Packages Included
+                        <ul>
+                            <li>Styled Components</li>
+                            <li>AOS - Animate on Scroll</li>
+                            <li>Framer Motion</li>
+                            <li>React Icons</li>
+                            <li>React Scroll</li>
+                            <li>React Typed</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
             <IntroContainer>
                 <h1>J. Otto</h1>
                 <p>Front End Developer</p>
@@ -151,6 +200,11 @@ const Hero = () => {
                 </HeroLinks>
             </IntroContainer>
             <Image src={image} alt=''/>
+            <HeroIconsContainer>
+                <HeroIcons><a id='git' href='https://github.com/justigo86' target='_blank' rel='noreferrer noopener'><FaGithub /></a></HeroIcons>
+                <HeroIcons><a id='mail' href='mailto: justigo86@gmail.com' target='_blank' rel='noreferrer noopener'><FaEnvelope /></a></HeroIcons>
+                <HeroIcons><a id='linked' href='https://www.linkedin.com/in/justin-otto-60b449100' target='_blank' rel='noreferrer noopener'><FaLinkedin /></a></HeroIcons>
+            </HeroIconsContainer>
         </HeroContainer>
     )
 }

@@ -1,9 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import image1 from '../photos/PennyGalleryCapture2.jpg'
 import image2 from '../photos/work2.jpg';
 import AOS from 'aos';
 import "aos/dist/aos.css"
+
+const flex = css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
 
 const media = {
     mobile: '@media(max-width: 600px)',
@@ -12,10 +19,7 @@ const media = {
 
 const ProjectContainer = styled.div `
     height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    ${flex};
 `
 
 const ProjectTitle = styled.h1`
@@ -36,6 +40,17 @@ const ProjectTitle = styled.h1`
     height: 100%;
     width: 100%;
     display: block;
+    ${flex};
+`
+
+const ProjectDetails = styled.div`
+    width: 90%;
+    background: hsla(0, 0%, 0%, .4);
+    & > p {
+        text-align: center;
+        margin: 4px;
+        font-weight: 600;
+    }
 `
 
 const ProjectCardFooter = styled.div `
@@ -50,6 +65,7 @@ const ProjectCardFooter = styled.div `
     bottom: 15vh;
     background: linear-gradient(45deg, #6303B1, #ff0099);
     transition: .5s ease-in-out, width .8s, height .5s;
+    cursor: pointer;
     ${media.medium} {
         width: 32vw;
     }
@@ -75,7 +91,6 @@ const CardContainer = styled.div`
     width: 30vw;
     border-radius: 30px;
     overflow: hidden;
-    cursor: pointer;
     ${media.medium} {
         flex-direction: column;
         width: 50vw;
@@ -88,7 +103,7 @@ const CardContainer = styled.div`
         filter: grayscale(0);
     }
     &:hover > ${ProjectCardFooter} {
-        height: 11vh;
+        height: 8vh;
         width: 32vw;
         bottom: 0;
         ${media.medium} {
@@ -105,8 +120,17 @@ const Projects = () => {
     return (
         <ProjectContainer id='projects'>
             <ProjectTitle data-aos='fade-right'>Projects</ProjectTitle>
-            <CardContainer data-aos='fade-left'>
-                <ProjectOneCardHeader />
+            <CardContainer 
+            // data-aos='fade-left'
+            >
+                <ProjectOneCardHeader>
+                    <ProjectDetails>
+                        <p>React App created for viewing, adding, and deleting images in a gallery.</p>
+                        <p>A learning project that grew into a means to memorialize a beloved pup.</p>
+                        <p>Front End: HTML5, CSS3, JSX, React-App</p>
+                        <p>Back End: Firebase Firestore</p>
+                    </ProjectDetails>
+                </ProjectOneCardHeader>
                 <ProjectCardFooter>
                     <Titles>Image Gallery App</Titles>
                 </ProjectCardFooter>

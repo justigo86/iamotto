@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import Raleway from '../fonts/Raleway-VariableFont_wght.ttf';
+import emailjs from 'emailjs-com';
 
 const ConnectContainer = styled.div `
     height: 90vh;
@@ -34,8 +36,8 @@ const ConnectForm = styled.form`
     justify-content: center;
     flex-direction: column;
     font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    font-weight: bold;
-    margin: 3vh 3vw;
+    font-weight: 800;
+    margin: 3vh 3vw 1vh;
 `
 
 const ConnectFormSections = styled.div`
@@ -63,18 +65,21 @@ const ConnectFormLabels = styled.div`
 
 const ConnectFormInputs = styled.input`
     ${formStyles}
-    
+    height: 4vh;
 `
 
 const ConnectComments = styled.textarea`
     ${formStyles}
+    height: 8vh;
 `
 
 const ConnectSubmitButton = styled.button`
     padding: 4px;
-    font-weight: bold;
+    font-weight: 900;
+    font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
     border-radius: 20px;
     cursor: pointer;
+    margin: 4px;
     &:hover {
         background-color: hsl(210, 31%, 80%);
     }
@@ -86,48 +91,80 @@ const UploadFormInput = styled.input`
     opacity: 0; */
     &::file-selector-button {
         padding: 4px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
+        font-weight: 700;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
+        font-family: 'Raleway';
+        src: url(${Raleway});
     }
 `
 
-const UploadFormButton = styled(ConnectSubmitButton)`
-    &::file-selector-button {
+// const UploadFormButton = styled(ConnectSubmitButton)`
+//     &::file-selector-button {
         
-    }
+//     }
+// `
+
+const SubmitReponse = styled.p`
+    opacity: ${props => props.opacity ? '1' : '0'};
+    transform: ${props => props.transform ? 'none' : 'translateY(20%)'};
+    transition: all .5s ease-in-out;
 `
 
 const Connect = () => {
+    const [response, setResponse] = useState(false);
     AOS.init()
 
-    const uploadFileFunc = () => {
-        const uploadButton = document.getElementById('uploadButton');
+    // const uploadFileFunc = () => {
+    //     const uploadButton = document.getElementById('uploadButton');
 
+    // }
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_px31op9', 'template_x7wp35u', e.target, 'user_fM4K2MOoQW2OhoHAdkNAO')
+            .then((result) => {
+                console.log(result.text);
+                setResponse(true);
+            }, (error) => {
+                console.log(error.text);
+            });
+        
+        e.target.reset();
+    }
+
+    const clearResponse = () => {
+        if (response === true) {
+            setResponse(false);
+        }
     }
 
     return (
         <ConnectContainer id='connect'>
             <ConnectTitle data-aos='fade-right'>Connect</ConnectTitle>
             <ConnectFormContainer data-aos='fade-left'>
-                <ConnectForm >
+                <ConnectForm action="" method="POST" enctype="multipare/form-data" onSubmit={sendEmail} onClick={clearResponse}>
                     <ConnectFormSections>
-                        <ConnectFormLabels>Name:</ConnectFormLabels>
-                        <ConnectFormInputs type="text" id="name" placeholder="Name" required/>
+                        <ConnectFormLabels for="name">Name:</ConnectFormLabels>
+                        <ConnectFormInputs name="name" type="text" id="name" placeholder="Name" required/>
                     </ConnectFormSections>
                     <ConnectFormSections>
-                        <ConnectFormLabels>Email:</ConnectFormLabels>
-                        <ConnectFormInputs type="email" id="email" placeholder="Email Address" required/>
+                        <ConnectFormLabels for="email">Email:</ConnectFormLabels>
+                        <ConnectFormInputs name="email" type="email" id="email" placeholder="Email Address" required/>
                     </ConnectFormSections>
                     <ConnectFormSections>
-                        <ConnectFormLabels>Comments/Message:</ConnectFormLabels>
-                        <ConnectComments type="text" id="comments" placeholder="Comments welcomed!"></ConnectComments>
+                        <ConnectFormLabels for="comments">Comments/Message:</ConnectFormLabels>
+                        <ConnectComments name="comments" type="text" id="comments" placeholder="Comments welcomed!"></ConnectComments>
                     </ConnectFormSections>
-                    <ConnectFormSections>
-                        <ConnectFormLabels>Feel free to submit photo(s) of your pup(s)!</ConnectFormLabels>
-                        <UploadFormInput type="file" multiple id="submittedImage"/>
-                    </ConnectFormSections>
-                        <ConnectSubmitButton type="submit" id="fname">Submit</ConnectSubmitButton>
+                    {/* <ConnectFormSections>
+                        <ConnectFormLabels for="photo">Feel free to submit photos of your pup(s)!</ConnectFormLabels>
+                        <UploadFormInput name="photo" type="file" multiple id="submittedImage"/>
+                    </ConnectFormSections> */}
+                        <ConnectSubmitButton type="submit" id="submit" value="Send">Submit</ConnectSubmitButton>
+                        <SubmitReponse opacity={response} transform={response}>Thank you for your submission.</SubmitReponse>
+                        <SubmitReponse opacity={response} transform={response}>By the way, your smile is radiant!</SubmitReponse>
                 </ConnectForm>
             </ConnectFormContainer>
         </ConnectContainer>
