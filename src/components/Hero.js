@@ -7,26 +7,23 @@ import image from '../photos/coffee1.jpg';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const intros = [
-    'am committed to learn every day',
-    'hope you like it here',
-    'think dogs are the best',
-    'eat more tacos than I should',
-    'know what you did last summer',
-    'am not convinced I know how to read. I’ve just memorized a lot of words'
+    'am committed to improving every day.',
+    'hope you like it here.',
+    'think dogs are the best.',
+    'eat more tacos than I should.',
+    'know what you did last summer.',
+    'am not convinced I know how to read. I’ve just memorized a lot of words.'
 ]
 
 const HeroContainer = styled.div `
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    flex-direction: column;
-    height: 100vh;
+    height: 110vh;
     text-align: start;
     color: white;
+    text-shadow: 2px 2px #000;
     font-size: calc(16px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
     overflow: hidden;
     position: relative;
-    top: -4rem;
+    top: -100px;
 `
 
 const heroLoad = keyframes `
@@ -52,6 +49,8 @@ const IntroContainer = styled.div `
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        text-shadow: none;
+        filter: drop-shadow(2px 2px #000);
     }
 `
 
@@ -81,12 +80,14 @@ const Atags = styled.a `
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        text-shadow: none;
+        filter: drop-shadow(2px 2px #000);
     }
 `
 
 const imageLoad = keyframes `
     0% {
-        right: -3vw;
+        /* right: -3vw; */
         opacity: 0;
     }
     100% {
@@ -95,14 +96,22 @@ const imageLoad = keyframes `
 `
 
 const Image = styled.img `
-    filter: grayscale(100%) brightness(60%);
+    filter: grayscale(40%) brightness(60%);
     position: absolute;
-    max-height: 60vh;
+
+    /* max-height: 60vh;
     max-width: 60vw;
     bottom: 20vh;
     right: 12vw;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px; */
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+
     z-index: -1;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px;
 
     animation: ${imageLoad} ease 2s;
 `
@@ -141,30 +150,6 @@ const HeroIcons = styled.li`
 const Hero = () => {
     return (
         <HeroContainer id='home'>
-            <div>
-                <p>Development Details</p>
-                <ul>
-                    <li>Portfolio Created from Scratch</li>
-                    <li>Languages Used
-                        <ul>
-                            <li>React</li>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JSX</li>
-                        </ul>
-                    </li>
-                    <li>Packages Included
-                        <ul>
-                            <li>Styled Components</li>
-                            <li>AOS - Animate on Scroll</li>
-                            <li>Framer Motion</li>
-                            <li>React Icons</li>
-                            <li>React Scroll</li>
-                            <li>React Typed</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
             <IntroContainer>
                 <h1>J. Otto</h1>
                 <p>Front End Developer</p>

@@ -13,12 +13,12 @@ const flex = css`
 `
 
 const media = {
-    mobile: '@media(max-width: 600px)',
-    medium: '@media(max-width: 1000px)'
+    mobile: '@media(max-width: 800px)',
+    medium: '@media(max-width: 1200px)'
 }
 
 const ProjectContainer = styled.div `
-    height: 90vh;
+    height: 80vh;
     ${flex};
 `
 
@@ -28,6 +28,8 @@ const ProjectTitle = styled.h1`
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: none;
+        filter: drop-shadow(2px 2px #000);
     font-weight: 900;
 `
 
@@ -46,9 +48,12 @@ const ProjectTitle = styled.h1`
 const ProjectDetails = styled.div`
     width: 90%;
     background: hsla(0, 0%, 0%, .4);
+    border-radius: 20px;
+    transform: scale(0);
+    transition: .5s ease-in-out;
     & > p {
         text-align: center;
-        margin: 4px;
+        margin: 4% 0;
         font-weight: 600;
     }
 `
@@ -77,6 +82,8 @@ const ProjectCardFooter = styled.div `
 const Titles = styled.p`
     font-weight: bold;
     font-size: calc(18px + (24 - 14) * ((100vw - 300px) / (1600 - 300)));
+    text-shadow: none;
+    filter: drop-shadow(2px 2px #000);
     /* margin: 2vw; */
 `
 
@@ -113,6 +120,9 @@ const CardContainer = styled.div`
             width: 75vw;
         }
     }
+    &:hover > * > ${ProjectDetails} {
+        transform: scale(1);
+    }
 `
 
 const Projects = () => {
@@ -120,13 +130,11 @@ const Projects = () => {
     return (
         <ProjectContainer id='projects'>
             <ProjectTitle data-aos='fade-right'>Projects</ProjectTitle>
-            <CardContainer 
-            // data-aos='fade-left'
-            >
+            <CardContainer data-aos='fade-left'>
                 <ProjectOneCardHeader>
                     <ProjectDetails>
-                        <p>React App created for viewing, adding, and deleting images in a gallery.</p>
-                        <p>A learning project that grew into a means to memorialize a beloved pup.</p>
+                        <p>React App for viewing, adding, and deleting images in a gallery.</p>
+                        <p>A learning project that grew to memorialize a beloved pup.</p>
                         <p>Front End: HTML5, CSS3, JSX, React-App</p>
                         <p>Back End: Firebase Firestore</p>
                     </ProjectDetails>

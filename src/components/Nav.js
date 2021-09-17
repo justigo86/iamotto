@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { Link } from 'react-scroll';
-import Projects from './Projects';
 
 const NavbarContainer = styled.nav `
     position: sticky;
@@ -11,10 +10,10 @@ const NavbarContainer = styled.nav `
     align-items: center;
     justify-content: center;
     z-index: 1;
-    /* background-image: linear-gradient(45deg, #6303B1, #ff0099); */
-    /* display: none; */
-    /* margin: 1rem; */
     padding: 2.5rem 2rem;
+    /* background: hsla(0, 0%, 0%, .5); */
+    background: ${(props) => (props.clicked && props.showNav ? 'none' : 'hsla(0, 0%, 0%, .5)')};
+    transition: all 0.4s ease-in-out;
 `
 
 const menuLoad = keyframes `
@@ -27,7 +26,6 @@ const Menu = styled.div `
     height: 3rem;
     width: 3rem;
     cursor: pointer;
-    /* background: white; */
     border-radius: 50%;
     margin: 1rem;
     position: fixed;
@@ -115,7 +113,7 @@ const links = [
 
 const Nav = () => {
     const [expand, setExpand] = useState(true);
-    const [showNav, setShowNav] = useState(false);
+    const [showNav, setShowNav] = useState(true);
 
     const handleClick = () => setExpand(!expand);
 
@@ -129,7 +127,7 @@ const Nav = () => {
     window.addEventListener('scroll', adjustNavOnScroll);
 
     return (
-        <NavbarContainer>
+        <NavbarContainer clicked={expand} showNav={showNav}>
             <Menu onClick={() => handleClick()} >
                 <Burger clicked={expand} showNav={showNav}></Burger>
             </Menu>

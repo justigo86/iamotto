@@ -6,7 +6,7 @@ import Raleway from '../fonts/Raleway-VariableFont_wght.ttf';
 import emailjs from 'emailjs-com';
 
 const ConnectContainer = styled.div `
-    height: 90vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,6 +19,8 @@ const ConnectTitle = styled.h1`
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(2px 2px #000);
     font-weight: 900;
 `
 
@@ -37,6 +39,7 @@ const ConnectForm = styled.form`
     flex-direction: column;
     font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     font-weight: 800;
+    text-shadow: 2px 2px #000;
     margin: 3vh 3vw 1vh;
 `
 

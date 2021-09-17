@@ -10,7 +10,7 @@ const media = {
 }
 
 const AboutContainer = styled.div `
-    height: 90vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,6 +37,8 @@ const AboutTitle = styled.h1`
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(2px 2px #000);
     font-weight: 900;
     margin: 0 0 1.5vh;
 `
@@ -66,6 +68,8 @@ const AboutImage1 = styled.img`
 
 const PupTitles = styled.p`
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
+    text-shadow: 2px 2px #000;
+    filter: drop-shadow(2px 2px #000);
     /* -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
     padding: 0 6%;
