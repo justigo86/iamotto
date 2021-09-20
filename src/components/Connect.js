@@ -5,6 +5,11 @@ import "aos/dist/aos.css";
 import Raleway from '../fonts/Raleway-VariableFont_wght.ttf';
 import emailjs from 'emailjs-com';
 
+const media = {
+    mobile: '@media(max-width: 800px)',
+    medium: '@media(max-width: 1200px)'
+}
+
 const ConnectContainer = styled.div `
     height: 80vh;
     display: flex;
@@ -30,6 +35,12 @@ const ConnectFormContainer = styled.div`
     display: inline-block;
     border-radius: 30px;
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
+    ${media.medium} {
+        width: 50vw;
+    }
+    ${media.mobile} {
+        width: 70vw;
+    }
 `
 
 const ConnectForm = styled.form`

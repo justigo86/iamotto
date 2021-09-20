@@ -23,7 +23,7 @@ const HeroContainer = styled.div `
     font-size: calc(16px + (30 - 14) * ((100vw - 300px) / (1600 - 300)));
     overflow: hidden;
     position: relative;
-    top: -100px;
+    top: -9rem;
 `
 
 const heroLoad = keyframes `

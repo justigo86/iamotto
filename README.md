@@ -8,6 +8,6 @@ Animate on Scroll\
 Framer Motion\
 React Icons\
 React Scroll\
-React Typed\
+React Typed
 
 ![Gif to show webpage with scroll functionality.](./src/photos/PortfolioWebsitev1.gif)

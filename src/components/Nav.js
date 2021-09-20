@@ -2,6 +2,11 @@ import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { Link } from 'react-scroll';
 
+const media = {
+    mobile: '@media(max-width: 800px)',
+    medium: '@media(max-width: 1200px)'
+}
+
 const NavbarContainer = styled.nav `
     position: sticky;
     top: 0;
@@ -11,9 +16,12 @@ const NavbarContainer = styled.nav `
     justify-content: center;
     z-index: 1;
     padding: 2.5rem 2rem;
-    /* background: hsla(0, 0%, 0%, .5); */
     background: ${(props) => (props.clicked && props.showNav ? 'none' : 'hsla(0, 0%, 0%, .5)')};
     transition: all 0.4s ease-in-out;
+
+    ${media.mobile} {
+        height: 9rem;
+    }
 `
 
 const menuLoad = keyframes `
@@ -35,14 +43,14 @@ const Menu = styled.div `
     top: 0;
     left: 0;
     transition: all 0.3 ease-in-out;
-
     animation: ${menuLoad} .5s;
+    transform: ${(props) => (props.showNav ? 'none' : 'translateY(-50vh)')};
 `
 
 const Burger = styled.div `
     background: white;
-    width: 1.9rem;
-    height: .3rem;
+    height: clamp(0.25rem, .3rem, 2rem);
+    width: min(1.9rem, 6vw);
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     background: ${(props) => (props.clicked ? 'white' : 'transparent')};
@@ -52,8 +60,10 @@ const Burger = styled.div `
         content: '';
         position: absolute;
         background: white;
-        width: 2.5rem;
-        height: .3rem;
+        width: clamp(0.25rem, 2.5rem, 3.5rem);
+        height: clamp(0.25rem, .3rem, 2rem);
+        width: min(2.5rem, 8vw);
+
         border-radius: 8px;
         transition: transform 0.5s ease-in-out;
     }
@@ -67,20 +77,23 @@ const Burger = styled.div `
 
 const Navbar = styled.div `
     /* border: 2px solid white; */
-    width: 100%;
+    width: 85%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     justify-content: space-around;
-    transform: ${(props) => (props.clicked && props.showNav ? 'translateY(-50vw)' : 'none')};
-    transition: all 0.3s ease-in-out;
+    align-items: center;
+    transform: ${(props) => (props.clicked && props.showNav ? 'translateY(-50vh)' : 'none')};
+    transition: transform 0.3s ease-in-out;
+
+    ${media.mobile} {
+        flex-direction: ${(props) => (props.clicked && props.showNav ? 'none' : 'column')};
+        opacity: ${(props) => (props.clicked && props.showNav ? '0' : '1')};
+    }
 `
 
 const Atags = styled.a `
     color: inherit;
-    font-size: clamp(0.25rem, 4vw, 2rem);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: bold;
-    /* color: ; */
     transition: 0.3s ease-in-out all;
     text-transform: uppercase;
     text-decoration: none;
@@ -128,7 +141,7 @@ const Nav = () => {
 
     return (
         <NavbarContainer clicked={expand} showNav={showNav}>
-            <Menu onClick={() => handleClick()} >
+            <Menu onClick={() => handleClick()} showNav={showNav}>
                 <Burger clicked={expand} showNav={showNav}></Burger>
             </Menu>
             <Navbar clicked={expand} showNav={showNav}>

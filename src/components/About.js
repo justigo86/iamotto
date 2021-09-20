@@ -16,6 +16,7 @@ const AboutContainer = styled.div `
     justify-content: center;
     ${media.mobile} {
         flex-direction: column;
+        height: 110vh;
     }
     /* border: 2px solid white; */
 `
