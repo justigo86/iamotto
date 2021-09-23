@@ -5,7 +5,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css"
 
 const media = {
-    mobile: '@media(max-width: 600px)',
+    mobile: '@media(max-width: 800px)',
     medium: '@media(max-width: 1000px)'
 }
 
@@ -36,6 +36,7 @@ const AboutInfoContainer = styled.div`
 const AboutTitle = styled.h1`
     font-size: calc(24px + (28 - 14) * ((100vw - 300px) / (1600 - 300)));
     background-image: linear-gradient(45deg, #6303B1, #ff0099);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
@@ -99,14 +100,14 @@ const About = () => {
         <AboutContainer id='about'>
             <AboutInfoContainer data-aos='fade-right'>
                 <AboutTitle>About</AboutTitle>
-                <AboutParagraph>After years of time spent in post-secondary administration,
-                    I've decided to take a leap into web development. 
-                    What started as a hobby in my evenings has become a passion 
+                <AboutParagraph>After years spent in post-secondary administration,
+                    I've decided to take the leap into web development. 
+                    What started years ago as a hobby in my free time has become a passion 
                     and something I'm committed to pursuing professionally.</AboutParagraph>
                 <AboutSubHeadings>Competencies</AboutSubHeadings>
-                <AboutParagraph>HTML5 / CSS3 / JavaScript / React / JSON / Git / Bash</AboutParagraph>
+                <AboutParagraph>HTML5 / CSS3 / JavaScript / React / JSX / NPM / JSON / Git / Bash</AboutParagraph>
                 <AboutSubHeadings>Used in the Past</AboutSubHeadings>
-                <AboutParagraph>SQL / Java / PHP</AboutParagraph>
+                <AboutParagraph>SQL / Node.js / Express.js / Java / PHP</AboutParagraph>
             </AboutInfoContainer>
             <AboutImageContainer data-aos='fade-left'>
                 <BanzaiTitle>BANZAI</BanzaiTitle>

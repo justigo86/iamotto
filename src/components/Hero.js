@@ -47,6 +47,7 @@ const IntroContainer = styled.div `
         display: inline-block;
         font-size: 5rem;
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: none;
@@ -67,6 +68,7 @@ const HeroLinks = styled.div `
     & > span {
         margin: 0px 6px;
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -78,6 +80,7 @@ const Atags = styled.a `
         /* border: 2px solid white; */
     &:hover {
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: none;

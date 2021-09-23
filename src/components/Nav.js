@@ -98,8 +98,14 @@ const Atags = styled.a `
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
+    & > span {
+        color: #9338df;
+        font-size: clamp(1rem, 2vw, 2rem);
+        vertical-align: top;
+    }
     &:hover {
         background-image: linear-gradient(45deg, #6303B1, #ff0099);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -149,6 +155,7 @@ const Nav = () => {
                     return (
                         <Link to={link.text} smooth={true} duration={1000} offset={-50}>
                             <Atags key={link.id}>
+                                <span>0{link.id}</span>
                                 {link.text}
                             </Atags>
                         </Link>
