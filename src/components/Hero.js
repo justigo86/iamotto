@@ -192,7 +192,7 @@ const Hero = () => {
             <HeroIconsContainer>
                 <HeroIcons><a id='git' href='https://github.com/justigo86' target='_blank' rel='noreferrer noopener'><FaGithub /></a></HeroIcons>
                 <HeroIcons><a id='mail' href='mailto: justigo86@gmail.com' target='_blank' rel='noreferrer noopener'><FaEnvelope /></a></HeroIcons>
-                <HeroIcons><a id='linked' href='https://www.linkedin.com/in/justin-otto-60b449100' target='_blank' rel='noreferrer noopener'><FaLinkedin /></a></HeroIcons>
+                <HeroIcons><a id='linked' href='https://www.linkedin.com/in/justin-otto-ed-s-60b449100' target='_blank' rel='noreferrer noopener'><FaLinkedin /></a></HeroIcons>
             </HeroIconsContainer>
         </HeroContainer>
     )
