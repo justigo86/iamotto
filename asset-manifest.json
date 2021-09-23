@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/iamotto/static/css/main.68da78a0.chunk.css",
+    "main.js": "/iamotto/static/js/main.08189e69.chunk.js",
+    "main.js.map": "/iamotto/static/js/main.08189e69.chunk.js.map",
+    "runtime-main.js": "/iamotto/static/js/runtime-main.b9d6ef55.js",
+    "runtime-main.js.map": "/iamotto/static/js/runtime-main.b9d6ef55.js.map",
+    "static/css/2.7fc9bc2b.chunk.css": "/iamotto/static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.4746ae2a.chunk.js": "/iamotto/static/js/2.4746ae2a.chunk.js",
+    "static/js/2.4746ae2a.chunk.js.map": "/iamotto/static/js/2.4746ae2a.chunk.js.map",
+    "index.html": "/iamotto/index.html",
+    "static/css/2.7fc9bc2b.chunk.css.map": "/iamotto/static/css/2.7fc9bc2b.chunk.css.map",
+    "static/css/main.68da78a0.chunk.css.map": "/iamotto/static/css/main.68da78a0.chunk.css.map",
+    "static/js/2.4746ae2a.chunk.js.LICENSE.txt": "/iamotto/static/js/2.4746ae2a.chunk.js.LICENSE.txt",
+    "static/media/DSC4721v2.da24463e.jpg": "/iamotto/static/media/DSC4721v2.da24463e.jpg",
+    "static/media/PennyGalleryCapture2.f408efec.jpg": "/iamotto/static/media/PennyGalleryCapture2.f408efec.jpg",
+    "static/media/index.css": "/iamotto/static/media/circuit-board.a62f72f6.svg",
+    "static/media/RoboFriendsCap.d43776aa.JPEG": "/iamotto/static/media/RoboFriendsCap.d43776aa.JPEG",
+    "static/media/SmartBrainCapture.b234b164.JPEG": "/iamotto/static/media/SmartBrainCapture.b234b164.JPEG",
+    "static/media/coffee1.6b3b6543.jpg": "/iamotto/static/media/coffee1.6b3b6543.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9d6ef55.js",
+    "static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.4746ae2a.chunk.js",
+    "static/css/main.68da78a0.chunk.css",
+    "static/js/main.08189e69.chunk.js"
+  ]
+}
