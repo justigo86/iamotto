@@ -14,6 +14,7 @@ const AboutContainer = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     ${media.mobile} {
         flex-direction: column;
         height: 110vh;

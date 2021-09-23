@@ -20,6 +20,7 @@ const media = {
 
 const ProjectContainer = styled.div `
     min-height: 80vh;
+    overflow: hidden;
     ${flex};
 `
 

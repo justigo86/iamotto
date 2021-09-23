@@ -18,7 +18,7 @@ const NavbarContainer = styled.nav `
     padding: 2.5rem 2rem;
     background: ${(props) => (props.clicked && props.showNav ? 'none' : 'hsla(0, 0%, 0%, .5)')};
     transition: all 0.4s ease-in-out;
-
+    overflow: hidden;
     ${media.mobile} {
         height: 9rem;
     }

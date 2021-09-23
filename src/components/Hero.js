@@ -126,6 +126,7 @@ const HeroIconsContainer = styled.ul`
     right: 5px;
     bottom: 10px;
     list-style-type: none;
+    z-index: 100;
 `
 
 const HeroIcons = styled.li`

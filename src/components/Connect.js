@@ -16,6 +16,7 @@ const ConnectContainer = styled.div `
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 `
 
 const ConnectTitle = styled.h1`
