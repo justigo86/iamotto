@@ -58,6 +58,7 @@ const ProjectDetails = styled.div`
         text-align: center;
         margin: 4% 0;
         font-weight: 600;
+        font-size: calc(12px + (28 - 14) * ((100vw - 300px) / (1600 - 300)));
     }
 `
 
@@ -78,7 +79,7 @@ const ProjectCardFooter = styled.div `
         width: 32vw;
     }
     ${media.mobile} {
-        width: 50vw;
+        width: 60vw;
     }
 `
 
@@ -88,6 +89,7 @@ const Titles = styled.p`
     text-shadow: none;
     filter: drop-shadow(2px 2px #000);
     transition: all .5s ease-in-out;
+    text-align: center;
     /* margin: 2vw; */
 `
 
@@ -99,7 +101,7 @@ const LinkContainer = styled.div`
 
 const Links = styled.a`
     margin: 0 2vw;
-    padding: 2px 3px;
+    padding: 1.5px 3px;
     text-decoration: none;
     font-weight: 600;
     color: white;
@@ -135,7 +137,7 @@ const Card = styled.div`
     }
     ${media.mobile} {
         flex-direction: column;
-        width: 70vw;
+        width: 80vw;
     }
     &:hover > ${ProjectOneCardHeader} {
         filter: grayscale(0);
@@ -150,7 +152,7 @@ const Card = styled.div`
             width: 55vw;
         }
         ${media.mobile} {
-            width: 75vw;
+            width: 85vw;
         }
         & > div {
             transform: scale(1);
@@ -171,8 +173,8 @@ const Projects = () => {
                 <Card data-aos='fade-left'>
                     <ProjectOneCardHeader url={image2}>
                         <ProjectDetails>
-                            <p>PERN stack React App with AI face-detection software.</p>
-                            <p>Users can sign into an account and track image uploads of successful face scans.</p>
+                            <p>PERN stack React App with AI face-detection. 
+                                Users sign into an account and track image uploads.</p>
                             <p>Project created with completion of Zero to Mastery Web Development course.</p>
                             <p>Front End: Create-React-App (HTML5, CSS3, JSX)</p>
                             <p>Back End: Node.js, Express.js, PostgreSQL</p>
