@@ -58,7 +58,7 @@ const ProjectDetails = styled.div`
         text-align: center;
         margin: 4% 0;
         font-weight: 600;
-        font-size: calc(12px + (28 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-size: calc(12px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
     }
 `
 
