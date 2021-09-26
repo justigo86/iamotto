@@ -156,7 +156,7 @@ const Hero = () => {
         <HeroContainer id='home'>
             <IntroContainer>
                 <h1>J. Otto</h1>
-                <p>Front End Developer</p>
+                <p>Web Developer</p>
                 <Descriptions>
                     and I&nbsp;
                     <Typed
