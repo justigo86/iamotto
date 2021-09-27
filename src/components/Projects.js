@@ -192,7 +192,7 @@ const Projects = () => {
                 <Card data-aos='fade-left'>
                     <ProjectOneCardHeader url={image1}>
                         <ProjectDetails>
-                            <p>React App for viewing, adding, and deleting images in a gallery.</p>
+                            <p>In development React App for viewing, adding, and deleting images in a gallery.</p>
                             <p>A learning project that grew to memorialize a beloved pup.</p>
                             <p>Front End: Create-React-App (HTML5, CSS3, JSX)</p>
                             <p>Back End: Firebase Firestore</p>
