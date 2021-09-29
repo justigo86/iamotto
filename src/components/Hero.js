@@ -5,7 +5,6 @@ import { Link } from 'react-scroll';
 //use Link for smooth react-scroll
 import image from '../photos/coffee1.jpg';
 import resume from '../photos/JOttoCV102021.pdf';
-import cv from '../photos/CV.png';
 import { FaGithub, FaLinkedin, FaEnvelope, FaRegFileAlt } from 'react-icons/fa';
 
 const intros = [
