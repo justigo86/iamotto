@@ -4,7 +4,9 @@ import styled, {keyframes} from 'styled-components';
 import { Link } from 'react-scroll';
 //use Link for smooth react-scroll
 import image from '../photos/coffee1.jpg';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import resume from '../photos/JOttoCV102021.pdf';
+import cv from '../photos/CV.png';
+import { FaGithub, FaLinkedin, FaEnvelope, FaRegFileAlt } from 'react-icons/fa';
 
 const intros = [
     'am committed to improving every day.',
@@ -141,6 +143,9 @@ const HeroIcons = styled.li`
         color: #AC00AC;
     }
     & > #linked:hover {
+        color: #BC0098;
+    }
+    & > #resume:hover {
         color: #ff0099;
     }
 `
@@ -193,6 +198,7 @@ const Hero = () => {
                 <HeroIcons><a id='git' href='https://github.com/justigo86' target='_blank' rel='noreferrer noopener'><FaGithub /></a></HeroIcons>
                 <HeroIcons><a id='mail' href='mailto: justigo86@gmail.com' target='_blank' rel='noreferrer noopener'><FaEnvelope /></a></HeroIcons>
                 <HeroIcons><a id='linked' href='https://www.linkedin.com/in/justin-otto-ed-s-60b449100' target='_blank' rel='noreferrer noopener'><FaLinkedin /></a></HeroIcons>
+                <HeroIcons><a id='resume' href={resume} target='_blank' rel='noreferrer noopener'><FaRegFileAlt/></a></HeroIcons>
             </HeroIconsContainer>
         </HeroContainer>
     )
